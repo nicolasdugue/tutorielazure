@@ -6,7 +6,7 @@ Dans ce tutoriel, l’objectif est d’utiliser les outils d’analyse de texte 
 Pour simplifier l’utilisation de Microsoft Azure et rendre l’outil accessible aux non-informaticiens (aux gens qui ne programment pas), Microsoft propose le service Power Automate, sur lequel il faut également vous connecter pour ce tutoriel.
 Enfin, pour analyser les données que vous souhaitez traiter, il s’agit de les organider sous forme de fichier Excel et des les stocker en ligne sur l’espace OneDrive de Microsoft.
 
-Il faut donc être connecté aux services : Onedrive, Power Automate et Azure.
+Il faut donc être connecté aux services : [Onedrive](https://onedrive.live.com/), Power Automate et [Azure](https://portal.azure.com/).
 
 ## Étape 1 : Mettre votre fichier en ligne sur OneDrive et le formater pour l’utilisation par Azure
 
@@ -34,3 +34,5 @@ La fenêtre ci-dessous s'ouvre, nous validons !
 La mise en forme du fichier change, et dans les [plages nommées](https://support.office.com/fr-fr/article/utiliser-le-gestionnaire-de-noms-dans-excel-4d8c4c2b-9f7d-44e3-a3b4-9f61bd5c64e4), on voit l'apparition du tableau !
 
 ![](azure_6.png)
+
+# Étape2 : Créer le service Azure
