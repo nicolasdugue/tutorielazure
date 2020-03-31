@@ -36,3 +36,24 @@ La mise en forme du fichier change, et dans les [plages nommées](https://suppor
 ![](azure_6.png)
 
 # Étape2 : Créer le service Azure
+
+Sur Microsoft Azure, créer une ressource !
+
+![](azure_7.png)
+
+Créer cette ressource en tant que Text Analytics : c'est ce type de ressources qui permet de faire l'analyse de sentiments.
+![](azure_8.png)
+
+
+Entrer un nom (dans mon cas *TestAnalytica*), choisir l'emplacement en Europe, le niveau tarifaire le plus faible, et créer un groupe de ressources pour l'occasion.
+
+![](azure_9.png)
+
+
+Ci-dessous, je trouve ma ressource *TestAnalytica* que je viens de créer et je l'ouvre
+
+![](azure_10.png)
+
+Sur ma ressource, je choisis de trouver les keys and endpoint, et je note le point de terminaison et la clé. Ces informations, c'est ce qui va permettra à Power Automate d'appeler notre service *TestAnalytica* Azure pour analyser le texte stocké sur OneDrive.
+
+![](azure_11.png)
