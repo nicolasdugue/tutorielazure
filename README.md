@@ -6,11 +6,11 @@ Dans ce tutoriel, l’objectif est d’utiliser les outils d’analyse de texte 
 Pour simplifier l’utilisation de Microsoft Azure et rendre l’outil accessible aux non-informaticiens (aux gens qui ne programment pas), Microsoft propose le service Power Automate, sur lequel il faut également vous connecter pour ce tutoriel.
 Enfin, pour analyser les données que vous souhaitez traiter, il s’agit de les organider sous forme de fichier Excel et des les stocker en ligne sur l’espace OneDrive de Microsoft.
 
-Il faut donc être connecté aux services : [Onedrive](https://onedrive.live.com/), Power Automate et [Azure](https://portal.azure.com/).
+Il faut donc être connecté aux services : [Onedrive](https://onedrive.live.com/), [Power Automate](https://emea.flow.microsoft.com/fr-fr/) et [Azure](https://portal.azure.com/).
 
 ## Étape 1 : Mettre votre fichier en ligne sur OneDrive et le formater pour l’utilisation par Azure
 
-Tout d’abord, il faut déposer votre fichier Excel sur OneDrive !
+Tout d’abord, il faut déposer votre fichier Excel sur OneDrive ! C'est dans ce fichier que seront stockées les données à traiter, mais également les résultats de l'analyse de sentiment.
 
 ![](azure_1.png)
 
@@ -57,3 +57,34 @@ Ci-dessous, je trouve ma ressource *TestAnalytica* que je viens de créer et je 
 Sur ma ressource, je choisis de trouver les keys and endpoint, et je note le point de terminaison et la clé. Ces informations, c'est ce qui va permettra à Power Automate d'appeler notre service *TestAnalytica* Azure pour analyser le texte stocké sur OneDrive.
 
 ![](azure_11.png)
+
+# Étape 3 : la configuration Power automate
+
+L'objectif ici est de créer un flux tel que Power Automate va aller chercher nos données dans OneDrive, les traiter et mettre à jour les données avec les résultats.
+
+On commence donc par créer un flux.
+
+![](azure_12.png)
+
+Ce flux sera composé de trois étapes et déclenché manuellement (une fois sur tous les tweets qu'on souhaite analyser).
+Pour ajouter une étape, on clique sur nouvelle étape.
+
+Les étapes sont : 
+- déclenchement manuel
+- récupération des données dans le tableaux Excel
+- Application des résultats
+
+![](azure_13.png)
+
+L'étape 2 est plus détaillée dans la figure qui suit. On choisit l'emplacement de notee fichier : OneDrive. Puis on choisit le fichier, et le tableau que nous avons créé au sein de ce fichier.
+
+![](azure_14.png)
+
+La dernière étape est détaillée dans la figure qui suit. On récupère *value* les données de l'étape 2, et on applique la détection de sentiment sur la colonne *TEXTE* du document Excel stocké sur OneDrive.
+Puis on met à jour les lignes du même document, en prenant pour clé la colonne *ID* de notre document qui identifie chacun de nos tweets, et en insérant le *Score* résultant de l'analyse de sentiment dans la colonne *SENTIMENT* de notre document.
+
+Il n'y a plus qu'à tester !
+
+
+![](azure_15.png)
+
